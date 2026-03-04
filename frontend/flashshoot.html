@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flash Shoot Booking - BrandOverse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    padding:80px 8%;
+    color:#111;
+    position:relative;
+    overflow-x:hidden;
+    background:#0f0f0f;
+}
+
+/* ===== ULTRA DARK GOLD BACKGROUND ===== */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(135deg,
+        #000000 0%,
+        #1a1a1a 15%,
+        #3b2a00 30%,
+        #b8860b 50%,
+        #3b2a00 70%,
+        #1a1a1a 85%,
+        #000000 100%);
+    background-size:400% 400%;
+    animation:darkGoldMove 10s ease infinite;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:-100%;
+    width:40%;
+    height:100%;
+    background:linear-gradient(120deg,
+        transparent,
+        rgba(255,215,0,0.5),
+        transparent);
+    transform:skewX(-25deg);
+    animation:royalShine 7s infinite;
+    z-index:-1;
+}
+
+@keyframes darkGoldMove{
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
+}
+
+@keyframes royalShine{
+    0%{ left:-100%; }
+    100%{ left:150%; }
+}
+
+/* ===== CONTAINER SILVER ===== */
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:50px;
+    border-radius:20px;
+    background:linear-gradient(135deg,
+        #f5f5f5 0%,
+        #d9d9d9 20%,
+        #eeeeee 40%,
+        #cfcfcf 60%,
+        #f2f2f2 80%,
+        #d0d0d0 100%);
+    background-size:300% 300%;
+    animation:silverMove 8s ease infinite;
+    box-shadow:0 25px 60px rgba(0,0,0,0.4);
+}
+
+@keyframes silverMove{
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
+}
+
+/* ===== LOGO ===== */
+
+.logo{
+    text-align:center;
+    margin-bottom:0px;
+}
+
+.logo img{
+    width:320px;
+    max-width:100%;
+    display:block;
+    margin:0 auto;
+}
+
+/* ===== TEXT ===== */
+
+h1{
+    font-size:36px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+p{
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+/* ===== FORM ===== */
+
+form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:30px;
+}
+
+form input,
+form select,
+form textarea{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #aaa;
+    background:linear-gradient(145deg,#f8f8f8,#dcdcdc);
+    box-shadow:inset 2px 2px 5px rgba(0,0,0,0.1),
+               inset -2px -2px 5px rgba(255,255,255,0.8);
+    outline:none;
+    font-size:14px;
+}
+
+form textarea{
+    grid-column:1/3;
+    resize:none;
+}
+
+.full{
+    grid-column:1/3;
+}
+
+button{
+    padding:14px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#d4af37,#b8860b);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.success-message{
+    margin-top:20px;
+    color:green;
+    font-weight:600;
+    display:none;
+}
+
+.brand-details{
+    margin-top:50px;
+    padding-top:30px;
+    border-top:2px solid rgba(0,0,0,0.1);
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:40px;
+    text-decoration:none;
+    color:#b8860b;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+    form{
+        grid-template-columns:1fr;
+    }
+    .full{
+        grid-column:1/2;
+    }
+    form textarea{
+        grid-column:1/2;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        <img src="images/bov-logo.png" alt="BrandOverse Logo">
+    </div>
+
+    <h1>Flash Shoot – Instant Reel Production</h1>
+
+    <p>
+    Need a reel shot and edited immediately?  
+    Flash Shoot is our rapid-response service where we shoot, edit and deliver
+    your reel on the spot — all completed at your location.
+    </p>
+
+    <form id="bookingForm">
+
+        <input type="text" placeholder="Your Name / Brand Name" required>
+        <input type="email" placeholder="Email Address" required>
+
+        <input type="tel" placeholder="Phone Number (Urgent Contact)" required>
+        <input type="text" placeholder="Location Address" required>
+
+        <select required class="full">
+            <option value="">Select Reel Type</option>
+            <option>Business Promotion Reel</option>
+            <option>Event Highlight Reel</option>
+            <option>Personal Branding Reel</option>
+            <option>Product Reel</option>
+            <option>Trend / Viral Reel</option>
+        </select>
+
+        <select required>
+            <option value="">Duration</option>
+            <option>15 Seconds</option>
+            <option>30 Seconds</option>
+            <option>45 Seconds</option>
+            <option>60 Seconds</option>
+        </select>
+
+        <select required>
+            <option value="">Urgency Level</option>
+            <option>Within 2 Hours</option>
+            <option>Same Day</option>
+            <option>Immediate (On Arrival)</option>
+        </select>
+
+        <textarea rows="4" placeholder="Describe Your Requirement / Event Details..." class="full"></textarea>
+
+        <button type="submit" class="full">Request Flash Shoot</button>
+
+    </form>
+
+    <div class="success-message" id="successMessage">
+        ⚡ Your Flash Shoot request has been submitted successfully!
+    </div>
+
+    <div class="brand-details">
+        <h2>About BrandOverse</h2>
+        <p>
+        BrandOverse delivers premium cinematic content with speed and precision.
+        </p>
+        <p>
+        Our Flash Shoot service is designed for urgent marketing needs,
+        live events and instant social media content creation.
+        </p>
+        <p>
+        We shoot, edit and deliver your reel instantly — professionally
+        and efficiently at your location.
+        </p>
+    </div>
+
+    <a href="index.html" class="back-btn" onclick="sessionStorage.setItem('skipIntro', '1'); if (window.history.length > 1) { event.preventDefault(); history.back(); }">Back</a>
+
+</div>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("successMessage").style.display = "block";
+    this.reset();
+});
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrandOverse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= SANDAL INTRO ANIMATION ================= */
+
+/* ================= SANDAL INTRO ANIMATION ================= */
+
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    /* Premium Sandal Background */
+    background: linear-gradient(135deg,
+        #3e2c1c 0%,
+        #8b6f47 25%,
+        #d2b48c 50%,
+        #f5deb3 70%,
+        #8b6f47 100%);
+    background-size: 300% 300%;
+    animation: sandalIntroMove 8s ease infinite,
+               introFadeOut 1s ease forwards;
+    animation-delay: 0s, 3s; /* start fadeout after 3s */
+}
+
+#intro img {
+    width: 260px;
+    animation: logoZoom 3s ease-in-out;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+}
+
+/* Background Soft Movement */
+@keyframes sandalIntroMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Logo Zoom */
+@keyframes logoZoom {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Fade Out Intro */
+@keyframes introFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; display: none; }
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    color:#111;
+    position:relative;
+}
+
+/* ================= METALLIC SILVER BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(120deg,#f5f5f5 0%,#cfcfcf 20%,#e6e6e6 40%,#bfbfbf 60%,#f2f2f2 80%,#d9d9d9 100%);
+    background-size:300% 300%;
+    animation:metalMove 8s ease infinite;
+    z-index:-2;
+}
+
+/* ================= CRYSTAL BLUE DIAMOND BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(135deg,#001f3f 0%,#003f7f 15%,#00aaff 30%,#87e0ff 50%,#00aaff 70%,#003f7f 85%,#001f3f 100%);
+    background-size:400% 400%;
+    animation:crystalMove 10s ease infinite;
+    z-index:-2;
+}
+
+/* ================= PREMIUM RED CARPET BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(135deg,
+        #2b0000 0%,
+        #5c0000 15%,
+        #8b0000 30%,
+        #b30000 50%,
+        #8b0000 70%,
+        #5c0000 85%,
+        #2b0000 100%);
+    background-size:400% 400%;
+    animation:redCarpetMove 10s ease infinite;
+    z-index:-2;
+}
+
+/* ================= RED CARPET + ROYAL GOLD BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(135deg,
+        #1a0000 0%,
+        #5c0000 20%,
+        #8b0000 35%,
+        #d4af37 50%,
+        #8b0000 65%,
+        #5c0000 80%,
+        #1a0000 100%);
+    background-size:400% 400%;
+    animation:luxuryMove 12s ease infinite;
+    z-index:-2;
+}
+
+/* Golden Luxury Shine */
+/* ================= PREMIUM SOFT PURPLE LUXURY BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(135deg,
+        #1a0033 0%,
+        #3d0066 20%,
+        #6a0dad 40%,
+        #b57edc 55%,
+        #6a0dad 70%,
+        #3d0066 85%,
+        #1a0033 100%);
+    background-size:400% 400%;
+    animation:purpleFlow 12s ease infinite;
+    z-index:-2;
+}
+
+/* Soft Crystal Shine */
+/* ================= KRISHNA BLUE SHINY BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(135deg,
+        #000814 0%,
+        #001f3f 20%,
+        #003566 40%,
+        #0077b6 55%,
+        #003566 70%,
+        #001f3f 85%,
+        #000814 100%);
+    background-size:400% 400%;
+    animation:krishnaBlueFlow 12s ease infinite;
+    z-index:-2;
+}
+
+/* Divine Soft Shine Effect */
+/* ================= PREMIUM SANDAL LUXURY BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(135deg,
+        #3e2c1c 0%,
+        #8b6f47 20%,
+        #d2b48c 40%,
+        #f5deb3 55%,
+        #d2b48c 70%,
+        #8b6f47 85%,
+        #3e2c1c 100%);
+    background-size:400% 400%;
+    animation:sandalFlow 14s ease infinite;
+    z-index:-2;
+}
+
+/* Soft Golden Shine */
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:-100%;
+    width:45%;
+    height:100%;
+    background:linear-gradient(120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        rgba(255,223,150,0.7),
+        rgba(255,255,255,0.6),
+        transparent);
+    transform:skewX(-25deg);
+    animation:sandalShine 8s ease-in-out infinite;
+    z-index:-1;
+}
+
+@keyframes sandalFlow{
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
+}
+
+@keyframes sandalShine{
+    0%{ left:-100%; }
+    100%{ left:150%; }
+}
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(15px);
+    box-shadow:0 8px 30px rgba(0,0,0,0.1);
+    z-index:1000;
+}
+
+.nav-logo img{
+    width:200px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#222;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#d4af37;
+    border-bottom:2px solid #d4af37;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    padding-top:140px;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.hero-content h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    margin-bottom:30px;
+    font-weight:500;
+}
+
+.btn{
+    padding:14px 35px;
+    background:linear-gradient(45deg,#d4af37,#b8860b);
+    border:none;
+    border-radius:50px;
+    color:white;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* ================= FLOATING IMAGE ================= */
+
+.hero-image{
+    width:450px;
+    animation:float 4s ease-in-out infinite;
+}
+
+.hero-image img{
+    width:100%;
+    filter:drop-shadow(0 25px 30px rgba(0,0,0,0.25));
+}
+
+@keyframes float{
+    0%,100%{ transform:translateY(0px); }
+    50%{ transform:translateY(-25px); }
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    padding:120px 8%;
+}
+
+.services h2{
+    text-align:center;
+    margin-bottom:60px;
+    font-size:35px;
+}
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:rgba(255,255,255,0.6);
+    padding:40px 20px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+    transition:0.4s ease;
+    text-align:center;
+    text-decoration:none;
+    color:#111;
+    display:block;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Premium Glow Effect */
+.service-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:
+        0 0 15px rgba(255,215,0,0.6),
+        0 0 30px rgba(255,215,0,0.5),
+        0 0 60px rgba(255,215,0,0.4);
+}
+
+/* Soft Inner Shine */
+/* ================= SERVICES UPGRADE ================= */
+
+.services{
+    padding:140px 8%;
+}
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+/* ================= PREMIUM FLOATING HALF IMAGE ================= */
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:70px; /* increased gap for floating space */
+    margin-top:80px;
+}
+
+.service-card{
+    background:rgba(255,255,255,0.75);
+    padding:80px 25px 40px 25px; /* extra top padding */
+    border-radius:25px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    transition:0.4s ease;
+    text-align:center;
+    text-decoration:none;
+    color:#111;
+    position:relative;
+    overflow:visible; /* IMPORTANT */
+    
+}
+
+/* Hover Lift */
+.service-card:hover{
+    transform:translateY(-15px) scale(1.05);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.25),
+        0 0 40px rgba(0,0,0,0.3);
+}
+
+/* Image Container */
+.service-image{
+    position:absolute;
+    top:-45px; /* makes half outside */
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* Black & White Floating Image */
+/* Black & White Floating Image */
+.service-image img{
+    width:100px;
+    height:100px;
+    object-fit:contain;
+    filter:grayscale(100%) contrast(110%) 
+            drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+    animation:floatService 4s ease-in-out infinite;
+    transition:0.4s ease;
+}
+
+/* When Hover – Image Gets Bigger */
+/* When Hover – Image Gets Much Bigger */
+.service-card:hover .service-image img{
+    transform:scale(1.6) translateY(-10px);
+    filter:grayscale(0%) contrast(115%)
+            drop-shadow(0 25px 45px rgba(0,0,0,0.5));
+}
+/* Floating Animation */
+@keyframes floatService{
+    0%,100%{ transform:translateY(0px); }
+    50%{ transform:translateY(-12px); }
+}
+/* ================= FOOTER ================= */
+
+footer{
+    background:#111;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:160px;
+    }
+
+    .hero-image{
+        width:280px;
+        margin-top:40px;
+    }
+
+    .hero-content h1{
+        font-size:35px;
+    }
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        margin-top:10px;
+    }
+
+    .nav-logo img{
+        width:150px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <!-- ================= INTRO SPLASH SCREEN ================= -->
+<div id="intro">
+    <img src="images/bov-logo.png" alt="BrandOverse Logo">
+</div>
+
+<nav>
+    <div class="nav-logo">
+        <img src="images/bov-logo.png" alt="BrandOverse Logo">
+    </div>
+    <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#">Login</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Welcome to BrandOverse</h1>
+        <p>Premium branding, photography, choreography and creative event excellence.</p>
+        <button class="btn">Explore Services</button>
+    </div>
+
+    <div class="hero-image">
+        <img src="images/camera.png" alt="Floating Image">
+    </div>
+
+</section>
+
+<section class="services" id="services">
+    <h2>Our Premium Services</h2>
+
+    <div class="service-container">
+
+        <a href="adshoot.html" class="service-card">
+    <div class="service-image">
+        <img src="images/adshoot.png" alt="Ad Shoot">
+    </div>
+    <h3>Ad Shoot</h3>
+    <p>We create high-impact commercial advertisements with cinematic visuals, strategic storytelling and professional production quality...</p>
+</a>
+
+        <a href="dance.html" class="service-card">
+            <h3>Dance Choreography</h3>
+            <p>Professional choreography for stage shows, cultural events, weddings, competitions and corporate performances. Our creative direction ensures powerful expressions and flawless execution.</p>
+        </a>
+
+        <a href="editing.html" class="service-card">
+            <h3>Editing</h3>
+            <p>Premium video editing services including color grading, cinematic cuts, sound design and visual enhancements. We transform raw footage into powerful visual experiences.</p>
+        </a>
+
+        <a href="prewedding.html" class="service-card">
+            <h3>Pre-Wedding Shoot</h3>
+            <p>Romantic, cinematic and storytelling-based pre-wedding photography and videography that captures emotions beautifully with elegant locations and creative concepts.</p>
+        </a>
+
+        <a href="logistics.html" class="service-card">
+            <h3>Movie Logistics</h3>
+            <p>Complete production logistics support including location management, crew coordination, equipment handling and on-ground execution for short films and feature projects.</p>
+        </a>
+
+        <a href="studio.html" class="service-card">
+            <h3>Dance Studio</h3>
+            <p>Professional dance training studio offering training in multiple styles with expert instructors, rehearsal space and performance preparation guidance.</p>
+        </a>
+
+        <a href="babyshoot.html" class="service-card">
+            <h3>Baby Shoot</h3>
+            <p>Soft, safe and beautifully themed baby photography sessions capturing adorable moments with premium props and creative styling.</p>
+        </a>
+
+        <a href="flashshoot.html" class="service-card">
+            <h3>Flash Shoot</h3>
+            <p>Quick turnaround professional photoshoots for events, branding campaigns and portfolio creation with high-quality lighting and creative direction.</p>
+        </a>
+
+        <a href="logo.html" class="service-card">
+            <h3>Logo Designs</h3>
+            <p>Custom logo designs crafted with strategic branding principles to reflect your business identity, vision and market positioning.</p>
+        </a>
+
+        <a href="motion.html" class="service-card">
+            <h3>Motion Graphics & 3D Animations</h3>
+            <p>High-quality motion graphics, title animations and 3D visual effects designed for advertisements, films, social media and digital campaigns.</p>
+        </a>
+
+    </div>
+</section>
+
+<footer>
+    © <span id="year"></span> BrandOverse | Premium Event Platform
+</footer>
+
+<script>
+document.getElementById("year").innerText = new Date().getFullYear();
+
+const navLinks = document.querySelectorAll("nav ul li a");
+navLinks.forEach(link => {
+    link.addEventListener("click", function(){
+        navLinks.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
+</script>
+
+</body>
+</html>
+

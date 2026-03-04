@@ -1,0 +1,303 @@
+/* GLOBAL SETTINGS */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:white;
+    line-height:1.6;
+}
+
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#1a1a1a;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.nav-logo img{
+    width:120px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.nav-logo img:hover{
+    transform:scale(1.08);
+}
+
+.logo{
+    font-size:26px;
+    font-weight:700;
+    color:#8B4513;
+    letter-spacing:1px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s ease;
+}
+/* Premium Gold Active Link */
+nav ul li a.active{
+    color:#d4af37;
+    font-weight:700;
+    border-bottom:2px solid #d4af37;
+}
+nav ul li a:hover{
+    color:#8B4513;
+}
+
+/* HERO SECTION */
+
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(135deg,#1a1a1a,#000000);
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:20px;
+    color:#8B4513;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:650px;
+    margin-bottom:30px;
+    opacity:0.8;
+}
+
+/* BUTTON */
+
+.btn{
+    padding:12px 35px;
+    background:#8B4513;
+    border:none;
+    border-radius:30px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    background:#a0522d;
+    transform:scale(1.05);
+}
+
+/* INFO SECTION */
+/* ================= PREMIUM SERVICES SECTION ================= */
+
+.services{
+    padding:180px 10%;
+}
+
+.services h2{
+    text-align:center;
+    margin-bottom:120px;
+    font-size:48px;
+    font-weight:600;
+    letter-spacing:2px;
+    color:#111;
+}
+
+/* Vertical luxury layout */
+.service-container{
+    display:flex;
+    flex-direction:column;
+    gap:100px;   /* more spacing */
+}
+
+/* Large elegant panels */
+.service-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px 70px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.65);
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px rgba(0,0,0,0.12);
+    transition:0.5s ease;
+    position:relative;
+}
+
+/* Alternate layout (zig-zag style) */
+.service-card:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+/* Service Title */
+.service-card h3{
+    font-size:34px;
+    font-weight:600;
+    color:#d4af37;
+    flex:1;
+}
+
+/* Service Description */
+.service-card p{
+    flex:1;
+    font-size:17px;
+    line-height:1.8;
+    color:#333;
+    max-width:500px;
+}
+
+/* Hover effect */
+.service-card:hover{
+    transform:translateY(-15px);
+    box-shadow:0 30px 80px rgba(0,0,0,0.18);
+}
+
+/* Responsive */
+@media(max-width:900px){
+
+    .service-card{
+        flex-direction:column !important;
+        text-align:center;
+        gap:20px;
+        padding:40px;
+    }
+
+    .services h2{
+        font-size:36px;
+    }
+
+    .service-card h3{
+        font-size:26px;
+    }
+}
+/* FOOTER */
+
+footer{
+    background:#1a1a1a;
+    padding:25px;
+    text-align:center;
+    font-size:14px;
+    opacity:0.7;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:992px){
+    .hero h1{
+        font-size:38px;
+    }
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        margin-top:15px;
+    }
+
+    nav ul li{
+        margin-left:15px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero{
+        height:auto;
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        font-size:24px;
+    }
+
+}
+.login-modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    visibility:hidden;
+    opacity:0;
+    transition:0.4s ease;
+    z-index:2000;
+}
+
+.login-modal.active{
+    visibility:visible;
+    opacity:1;
+}
+
+.login-box{
+    background:rgba(255,255,255,0.9);
+    padding:40px;
+    border-radius:25px;
+    width:350px;
+    text-align:center;
+    transform:scale(0.8);
+    transition:0.4s ease;
+}
+
+.login-modal.active .login-box{
+    transform:scale(1);
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin-bottom:20px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.login-box button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#d4af37,#b8860b);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+}
