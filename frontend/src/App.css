@@ -1,38 +1,352 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  color: #111;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #3e2c1c 0%,
+    #8b6f47 20%,
+    #d2b48c 40%,
+    #f5deb3 55%,
+    #d2b48c 70%,
+    #8b6f47 85%,
+    #3e2c1c 100%
+  );
+  background-size: 400% 400%;
+  animation: sandalFlow 14s ease infinite;
+  z-index: -2;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 223, 150, 0.7),
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: sandalShine 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  background: linear-gradient(
+    135deg,
+    #3e2c1c 0%,
+    #8b6f47 25%,
+    #d2b48c 50%,
+    #f5deb3 70%,
+    #8b6f47 100%
+  );
+  background-size: 300% 300%;
+  animation: sandalIntroMove 8s ease infinite, introFadeOut 1s ease forwards;
+  animation-delay: 0s, 3s;
+}
+
+#intro img {
+  width: 260px;
+  animation: logoZoom 3s ease-in-out;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-logo img {
+  width: 200px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a,
+nav ul li button {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: 0.3s;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li a.active,
+nav ul li button:hover,
+nav ul li button.active {
+  color: #d4af37;
+  border-bottom: 2px solid #d4af37;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  padding-top: 140px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 14px 35px;
+  background: linear-gradient(45deg, #d4af37, #b8860b);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.hero-image {
+  width: 450px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero-image img {
+  width: 100%;
+  filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.25));
+}
+
+.services {
+  padding: 140px 8%;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 35px;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 70px;
+  margin-top: 80px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 80px 25px 40px 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: 0.4s ease;
+  text-align: center;
+  text-decoration: none;
+  color: #111;
+  position: relative;
+  overflow: visible;
+  display: block;
+}
+
+.service-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-image {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.service-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter: grayscale(100%) contrast(110%) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
+  animation: floatService 4s ease-in-out infinite;
+  transition: 0.4s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.6) translateY(-10px);
+  filter: grayscale(0%) contrast(115%) drop-shadow(0 25px 45px rgba(0, 0, 0, 0.5));
+}
+
+footer {
+  background: #111;
+  color: white;
+  padding: 25px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes sandalFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes sandalShine {
+  0% {
+    left: -100%;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes sandalIntroMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes logoZoom {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes introFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes floatService {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 160px;
+  }
+
+  .hero-image {
+    width: 280px;
+    margin-top: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 35px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    margin-top: 10px;
+  }
+
+  .nav-logo img {
+    width: 150px;
   }
 }
